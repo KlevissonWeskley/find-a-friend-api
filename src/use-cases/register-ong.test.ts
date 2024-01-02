@@ -1,7 +1,7 @@
 import { compare } from 'bcryptjs'
 import { InMemoryOngsRepository } from '../repositories/in-memory/in-memory-ongs-repository'
 import { RegisterOngUseCase } from './register-ong'
-import { OngAlreadyExists } from './errors/Ong-already-exists'
+import { OngAlreadyExistsError } from './errors/Ong-already-exists-error'
 
 describe('Register Ong Use Case', () => {
     test('should be able to register a ong', async () => {
@@ -62,6 +62,6 @@ describe('Register Ong Use Case', () => {
                 password: '123456',
                 whatsapp: '89 99999999'
             })
-        ).rejects.toBeInstanceOf(OngAlreadyExists)
+        ).rejects.toBeInstanceOf(OngAlreadyExistsError)
     })
 })

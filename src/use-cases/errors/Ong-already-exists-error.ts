@@ -1,4 +1,4 @@
-export class OngAlreadyExists extends Error {
+export class OngAlreadyExistsError extends Error {
     constructor() {
         super('Ong already exists.')
     }

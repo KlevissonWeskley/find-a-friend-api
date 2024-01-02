@@ -10,5 +10,4 @@ export class PrismaPetsRepository implements PetsRepository {
 
         return pet
     }
-
 }

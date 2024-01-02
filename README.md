@@ -5,7 +5,7 @@
 [] - Deve ser possível filtrar pets por suas características
 [] - Deve ser possível visualizar detalhes de um pet para adoção
 [x] - Deve ser possível se cadastrar como uma ONG
-[] - Deve ser possível realizar login como uma ONG
+[x] - Deve ser possível realizar login como uma ONG
 
 ## Regras de negócio
 
