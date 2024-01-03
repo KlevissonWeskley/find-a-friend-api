@@ -1,17 +1,43 @@
-## Regras da aplicação
+<h1 align="center">
+  Find A Friend API
+</h1>
 
-[x] - Deve ser possível cadastrar um pet
-[] - Deve ser possível listar todos os pets disponíveis para adoção em uma cidade
-[] - Deve ser possível filtrar pets por suas características
-[] - Deve ser possível visualizar detalhes de um pet para adoção
-[x] - Deve ser possível se cadastrar como uma ONG
-[x] - Deve ser possível realizar login como uma ONG
+## Sobre
 
-## Regras de negócio
+Projeto desenvolvido durante o desafio Ignite da Rocketseat cujo objetivo foi colocar em prática todo o conteúdo estudado durante o módulo.
 
-[] - Para listar os pets, obrigatoriamente precisamos informar a cidade
-[x] - Uma ONG precisa ter um endereço e um número de WhatsApp
-[x] - Um pet deve estar ligado a uma ONG
-[] - O usuário que quer adotar, entrará em contato com a ONG via WhatsApp
-[] - Todos os filtros, além da cidade, são opcionais
-[] - Para uma ONG acessar a aplicação como admin, ela precisa estar logada
+## Find a Friend Api
+
+Esta api permite que ONGs cadastrem pets para adoção, e usuários interessados possam visualizar e adotar esses pets.
+
+## Rodando o servidor
+
+    # Clone o repositório 
+
+    git clone https://github.com/KlevissonWeskley/find-a-friend-api.git
+
+    # Acesse a pasta do projeto no terminal/cmd
+
+    cd find-a-friend-api
+
+    # Instale as dependências
+
+    npm install
+
+    # Execute a aplicação 
+
+    npm run dev
+
+    # O servidor iniciará na porta 3333 ou na porta definida no arquivo .env na variável PORT - acesse <http://localhost:3333>
+
+    # Acesse as rotas
+
+    POST '/ongs' para cadastrar ongs
+    POST '/sessions' para fazer login como uma ong
+    POST '/pets' para cadastrar um pet
+    GET '/petsInMyCity?city=nameOfCity' para listar os pets de uma cidade 
+
+
+## Tecnologias
+
+[![My Skills](https://skillicons.dev/icons?i=nodejs,ts,postgresql,prisma,jest,docker)](https://skillicons.dev)

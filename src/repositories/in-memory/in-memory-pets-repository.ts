@@ -19,7 +19,9 @@ export class InMemoryPetsRepository implements PetsRepository {
         this.items.push(pet)
 
         return pet
-        
-        
+    }
+
+    async findPetsByCity(city: string) {
+        return null
     }
 }
