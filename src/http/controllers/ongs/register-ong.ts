@@ -1,7 +1,7 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'
-import { makeRegisterOngUseCase } from '../../use-cases/factories/make-register-ong-use-case'
-import { OngAlreadyExistsError } from '../../use-cases/errors/Ong-already-exists-error'
+import { makeRegisterOngUseCase } from '../../../use-cases/factories/make-register-ong-use-case'
+import { UserAlreadyExistsError } from '../../../use-cases/errors/User-already-exists-error'
 
 export async function registerOng(request: FastifyRequest, reply: FastifyReply) {
     const registerOngBodySchema = z.object({
@@ -34,7 +34,7 @@ export async function registerOng(request: FastifyRequest, reply: FastifyReply) 
             whatsapp
         })
      } catch (err) {
-        if (err instanceof OngAlreadyExistsError) {
+        if (err instanceof UserAlreadyExistsError) {
             return reply.status(409).send({ message: err.message })
         }
 

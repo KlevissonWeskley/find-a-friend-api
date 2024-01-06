@@ -1,38 +1,42 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'
-import { makeAuthenticateOngUseCase } from '../../use-cases/factories/make-authenticate-ong-use-case'
-import { InvalidCredentialsError } from '../../use-cases/errors/Invalid-credentials-error'
+import { InvalidCredentialsError } from '../../../use-cases/errors/Invalid-credentials-error'
+import { makeAuthenticateClientUseCase } from '../../../use-cases/factories/make-authenticate-client-use-case'
 
-export async function authenticateOng(request: FastifyRequest, reply: FastifyReply) {
-    const authenticateOngBodySchema = z.object({
+export async function authenticateClient(request: FastifyRequest, reply: FastifyReply) {
+    const authenticateClientBodySchema = z.object({
         email: z.string().email(),
         password: z.string().min(6)
     })
 
-    const { email, password } = authenticateOngBodySchema.parse(request.body)
+    const { email, password } = authenticateClientBodySchema.parse(request.body)
 
     try {
-        const authenticateOngUseCase = makeAuthenticateOngUseCase()
+        const authenticateClientUseCase = makeAuthenticateClientUseCase()
 
-        const { ong } = await authenticateOngUseCase.execute({
+        const { client } = await authenticateClientUseCase.execute({
             email,
             password
         })
 
         const token = await reply.jwtSign(
-            {},
+            {
+                role: client.role
+            },
             {
                 sign: {
-                    sub: ong.id
+                    sub: client.id
                 }
             }
         )
 
         const refreshToken = await reply.jwtSign(
-            {},
+            {
+                role: client.role
+            },
             {
                 sign: {
-                    sub: ong.id,
+                    sub: client.id,
                     expiresIn: '7d'
                 }
             }

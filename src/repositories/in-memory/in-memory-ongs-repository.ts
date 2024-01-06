@@ -1,4 +1,4 @@
-import { Ong, Prisma } from '@prisma/client'
+import { Ong, Prisma, Role } from '@prisma/client'
 import { randomUUID } from 'node:crypto'
 import { OngsRepository } from '../ongs-repository'
 
@@ -14,6 +14,7 @@ export class InMemoryOngsRepository implements OngsRepository {
             address: data.address,
             whatsapp: data.whatsapp,
             password_hash: data.password_hash,
+            role: 'ADMIN' as Role,
             created_at: new Date()
         }
 
@@ -31,4 +32,5 @@ export class InMemoryOngsRepository implements OngsRepository {
 
         return ong
     }
+
 }

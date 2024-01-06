@@ -7,6 +7,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum Role {
+  ADMIN
+  MEMBER
+}
+
 model Pet {
   id         String   @id @default(uuid())
   name       String
@@ -21,6 +26,17 @@ model Pet {
   @@map("pets")
 }
 
+model Client {
+  id            String   @id @default(uuid())
+  name          String
+  email         String   @unique
+  password_hash String
+  role          Role     @default(MEMBER)
+  created_at    DateTime @default(now())
+
+  @@map("clients")
+}
+
 model Ong {
   id            String   @id @default(uuid())
   name          String
@@ -29,6 +45,7 @@ model Ong {
   address       String
   whatsapp      String
   password_hash String
+  role          Role     @default(ADMIN)
   created_at    DateTime @default(now())
 
   pets Pet[]

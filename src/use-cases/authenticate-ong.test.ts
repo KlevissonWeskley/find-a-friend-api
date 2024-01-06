@@ -3,8 +3,8 @@ import { InMemoryOngsRepository } from '../repositories/in-memory/in-memory-ongs
 import { AuthenticateOngUseCase } from './authenticate-ong'
 import { InvalidCredentialsError } from './errors/Invalid-credentials-error'
 
-describe('Register Ong Use Case', () => {
-    test('should be able to register a ong', async () => {
+describe('Authenticate Ong Use Case', () => {
+    test('should be able to authenticate a ong', async () => {
         const ongsRepository = new InMemoryOngsRepository()
         const sut = new AuthenticateOngUseCase(ongsRepository)
 

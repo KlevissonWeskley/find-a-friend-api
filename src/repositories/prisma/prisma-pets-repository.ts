@@ -17,7 +17,7 @@ export class PrismaPetsRepository implements PetsRepository {
                 ongs: {
                     city
                 }
-            }
+            },
         })
 
         return pets

@@ -1,10 +1,10 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { ZodError, z } from 'zod'
-import { makeListPetsByCityUseCase } from '../../use-cases/factories/make-list-pets-by-city'
+import { makeListPetsByCityUseCase } from '../../../use-cases/factories/make-list-pets-by-city'
 
 export async function listPetsByCity(request: FastifyRequest, reply: FastifyReply) {
     const listPetsByCityQuerySchema = z.object({
-        city: z.string()
+        city: z.string(),
     })
 
     const { city } = listPetsByCityQuerySchema.parse(request.query)
