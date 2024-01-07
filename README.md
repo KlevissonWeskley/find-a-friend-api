@@ -32,10 +32,12 @@ Esta api permite que ONGs cadastrem pets para adoção, e usuários interessados
 
     # Acesse as rotas
 
+    POST '/clients' para cadastrar como cliente
+    POST '/sessions/client' para logar como cliente
     POST '/ongs' para cadastrar ongs
     POST '/sessions' para fazer login como uma ong
     POST '/pets' para cadastrar um pet
-    GET '/petsInMyCity?city=nameOfCity' para listar os pets de uma cidade 
+    GET '/petsInMyCity?city=nameOfCity' para listar os pets de uma cidade (precisa estar logado)
 
 
 ## Tecnologias
