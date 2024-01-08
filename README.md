@@ -24,6 +24,14 @@ Esta api permite que ONGs cadastrem pets para adoção, e usuários interessados
 
     npm install
 
+    # Suba o banco
+
+    docker compose up
+
+    # Rode as migrations
+
+    npx prisma migrate dev
+
     # Execute a aplicação 
 
     npm run dev
