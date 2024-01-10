@@ -4,7 +4,7 @@
 
 ## Sobre
 
-Projeto desenvolvido durante o desafio do curso Ignite da Rocketseat cujo objetivo foi colocar em prática todo o conteúdo estudado durante o módulo.
+Projeto desenvolvido sobre o desafio do curso Ignite da Rocketseat cujo objetivo foi colocar em prática todo o conteúdo estudado durante o módulo.
 
 ## Find a Friend Api
 
