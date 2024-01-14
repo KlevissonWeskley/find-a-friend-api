@@ -11,8 +11,7 @@ import { clientsRoutes } from './http/controllers/clients/routes'
 export const app = fastify()
 
 app.register(fastifyCors, {
-    origin: 'http://localhost:3333',
-    methods: ['GET', 'POST'],
+    origin: '*',
     credentials: true
 })
 
